@@ -3,7 +3,7 @@
 ## Domain Proyek
 Domain yang dipilih untuk proyek machine learning ini adalah Energi, dengan judul Predictive Analytics: Pencurian Listrik
 ### Latar Belakang
-![330px-500kV_3-Phase_Transmission_Lines](https://github.com/user-attachments/assets/c31a9093-7fb8-4e3d-aa59-022f515c7418)
+![330px-500kV_3-Phase_Transmission_Lines](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/500kV_3-Phase_Transmission_Lines.png/330px-500kV_3-Phase_Transmission_Lines.png)
 
 Pencurian listrik di Indonesia merupakan masalah yang cukup serius yang dapat berdampak pada sektor ekonomi, lingkungan, dan keselamatan. Pencurian ini sering terjadi di sektor rumah tangga, industri, hingga sektor komersial.Diperkirakan bahwa pencurian listrik menyebabkan kerugian sekitar 96 miliar dollar setiap tahun di industri listrik, dengan negara-negara berkembang menanggung sebagian besar beban ini, yang mencapai sekitar 60 miliar dollar per tahun.[[1]](https://doi.org/10.1109/tpwrs.2022.3162391) Konsumsi listrik ilegal sering kali menyebabkan ketidakseimbangan antara pasokan dan permintaan, yang menyulitkan perusahaan utilitas untuk mengelola sumber daya mereka dengan efektif.[[2]](https://doi.org/10.2478/amns-2024-0850)Penerapan predictive analysis atau analisis prediktif dalam industri distribusi listrik dapat menjadi solusi yang efektif untuk menghentikan pencurian listrik. Dengan menggunakan teknik analisis data yang canggih, industri distribusi listrik dapat memprediksi dan mendeteksi pola konsumsi listrik yang mencurigakan sebelum menjadi masalah besar. Dengan mengurangi insiden pencurian, perusahaan distribusi listrik dapat menstabilkan harga listrik bagi konsumen yang sah, sehingga memastikan bahwa biaya tidak dibebankan secara tidak proporsional kepada pengguna yang jujur.[[3]](https://doi.org/10.1155/2019/4136874)
 ## Business Understanding
@@ -57,12 +57,12 @@ Berikut ini contoh data pada dataset
 
 ### Exploratory Data Analysis - Univariate Analysis
 
-![download](https://github.com/user-attachments/assets/82bd11a1-6473-4043-8b27-db86e4bb5306)
+![download](https://drive.usercontent.google.com/download?id=126HdOJhwIkC7KjNmDbZXdTnnEN8dX6xK)
 
 Dapat dilihat pada gambar, terdapat 20152 untuk data 0 atau tidak terdeteksi pencurian dan 1889
 untuk terdeteksi pencurian. Hal ini menunjukkan adanya ketidakseimbangan data yang cukup besar.
 ### Exploratory Data Analysis - Multivariate Analysis
-![koefisien](https://github.com/user-attachments/assets/00b425f8-a6a1-434a-a01b-415b954023bb)
+![koefisien](https://drive.usercontent.google.com/download?id=1HRwlvs-jIe_Fmitj4iLdkjpN-KEqEQSs)
 
 
 Dapat dilihat dari matriks korelasi, FLAG atau deteksi adanya pencurian atau tidak memiliki korelasi dengan data lainnya. Beberapa tanggal memiliki korelasi positif yang cukup besar dengan tanggal lainnya, contohnya tanggal 1/20 dengan 1/22.
@@ -161,7 +161,6 @@ Rumus ini membagi jumlah data yang diklasifikasikan dengan benar sebagai positif
 | **KNN**        | 0.978593 |
 | **RandomForest**| 0.965551 |
 | **Boosting**   | 0.945128 |
-![download (1)](https://github.com/user-attachments/assets/5e56087e-89f4-4378-8931-b20d1ac80ab3)
 
 Dari hasil dapat dilihat bahwa model KNN memiliki Recall terbaik sehingga paling cocok untuk deteksi pencurian listrik
 ## Referensi
