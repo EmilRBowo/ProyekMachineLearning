@@ -85,14 +85,14 @@ Berikut ini contoh data pada dataset
 ## Exploratory Data Analysis - Univariate Analysis
 
 
-![download](https://github.com/user-attachments/assets/4f8e5578-aa9a-401d-be53-ac5c4b105960)
+![download](https://i.postimg.cc/bNt40WnD/download.png)
 
 Dapat dilihat pada gambar, terdapat 20152 untuk data 0 atau tidak terdeteksi pencurian dan 1889
 untuk terdeteksi pencurian. Hal ini menunjukkan adanya ketidakseimbangan data yang cukup besar.
 ## Exploratory Data Analysis - Multivariate Analysis
 
 
-![koefisien](https://github.com/user-attachments/assets/297d0442-26a2-4f56-8e20-73bb72c9e0d1)
+![koefisien](https://i.postimg.cc/qv7bbFhx/koefisien.png)
 
 Dapat dilihat dari matriks korelasi, FLAG atau deteksi adanya pencurian atau tidak memiliki korelasi dengan data lainnya. Beberapa tanggal memiliki korelasi positif yang cukup besar dengan tanggal lainnya, contohnya tanggal 1/20 dengan 1/22.
 
@@ -124,8 +124,9 @@ Dalam proyek ini, digunakan Train Test Split dari library sklearn.model_selectio
 
 ## Modeling
 ##### **KNN (K-Nearest Neighbors)**
-**Cara Kerja:**
-Algoritma K-Nearest Neighbors (KNN) bekerja dengan menentukan kelas atau nilai suatu data berdasarkan kedekatan dengan data lain yang telah diketahui kelas atau nilainya. Prosesnya dimulai dengan menentukan jumlah tetangga terdekat (K), lalu menghitung jarak antara data baru dengan setiap data dalam dataset menggunakan metode seperti Euclidean atau Manhattan. Setelah itu, algoritma memilih K data terdekat dan menentukan kelas atau nilai berdasarkan mayoritas (untuk klasifikasi) atau rata-rata (untuk regresi).
+**Cara Kerja:*  
+
+Algoritma K-Nearest Neighbors (KNN) bekerja dengan menentukan kelas atau nilai suatu data berdasarkan kedekatan dengan data lain yang telah diketahui kelas atau nilainya. Prosesnya dimulai dengan menentukan jumlah tetangga terdekat (K), lalu menghitung jarak antara data baru dengan setiap data dalam dataset menggunakan metode seperti Euclidean atau Manhattan. Setelah itu, algoritma memilih K data terdekat dan menentukan kelas atau nilai berdasarkan mayoritas (untuk klasifikasi) atau rata-rata (untuk regresi).  
 
 **Keunggulan:**
 1. **Sederhana dan Mudah Dipahami:** KNN mudah dipahami dan diimplementasikan karena hanya membutuhkan jarak antara titik data untuk membuat prediksi.
@@ -145,13 +146,15 @@ Algoritma K-Nearest Neighbors (KNN) bekerja dengan menentukan kelas atau nilai s
 
 ##### **Random Forest**
 **Cara Kerja**
-Algoritma Random Forest bekerja dengan membangun sekumpulan pohon keputusan (decision trees) untuk melakukan klasifikasi atau regresi. Prosesnya dimulai dengan membentuk beberapa subset data melalui teknik bootstrap sampling, di mana setiap pohon keputusan dilatih dengan subset data yang berbeda. Saat membangun setiap pohon, hanya sebagian fitur yang dipilih secara acak untuk digunakan dalam pemilihan split terbaik, yang membantu mengurangi korelasi antar pohon. Setelah semua pohon terbentuk, hasil prediksi ditentukan dengan cara voting mayoritas untuk klasifikasi atau rata-rata prediksi untuk regresi. Dengan pendekatan ini, Random Forest mengurangi overfitting yang sering terjadi pada pohon keputusan tunggal dan meningkatkan akurasi serta kestabilan model, terutama dalam menangani dataset besar dan kompleks.
-**Keunggulan:**
+
+Algoritma Random Forest bekerja dengan membangun sekumpulan pohon keputusan (decision trees) untuk melakukan klasifikasi atau regresi. Prosesnya dimulai dengan membentuk beberapa subset data melalui teknik bootstrap sampling, di mana setiap pohon keputusan dilatih dengan subset data yang berbeda. Saat membangun setiap pohon, hanya sebagian fitur yang dipilih secara acak untuk digunakan dalam pemilihan split terbaik, yang membantu mengurangi korelasi antar pohon. Setelah semua pohon terbentuk, hasil prediksi ditentukan dengan cara voting mayoritas untuk klasifikasi atau rata-rata prediksi untuk regresi. Dengan pendekatan ini, Random Forest mengurangi overfitting yang sering terjadi pada pohon keputusan tunggal dan meningkatkan akurasi serta kestabilan model, terutama dalam menangani dataset besar dan kompleks.  
+
+**Keunggulan:**  
 1. **Akurasi Tinggi:** Random Forest dapat menghasilkan model yang sangat akurat dengan menggabungkan banyak pohon keputusan.
 2. **Mengurangi Overfitting:** Dengan membuat banyak pohon keputusan pada subset data dan fitur yang berbeda, Random Forest membantu mengurangi overfitting dibandingkan dengan pohon keputusan tunggal.
 3. **Feature Importance:** Random Forest dapat memberikan informasi penting tentang fitur yang paling berpengaruh dalam model.
 
-**Kelemahan:**
+**Kelemahan:**  
 1. **Kompleksitas Model:** Random Forest menghasilkan model yang lebih kompleks dan sulit diinterpretasikan dibandingkan dengan model yang lebih sederhana.
 2. **Lambat untuk Prediksi:** Karena melibatkan banyak pohon keputusan, proses prediksi bisa lebih lambat, terutama pada data yang sangat besar.
 3. **Kebutuhan Memori:** Random Forest memerlukan lebih banyak memori untuk menyimpan banyak pohon keputusan.
@@ -166,7 +169,9 @@ Algoritma Random Forest bekerja dengan membangun sekumpulan pohon keputusan (dec
 
 ##### **Boosting Algorithm (Misalnya, AdaBoost, Gradient Boosting)**
 **Cara Kerja**
+
 Algoritma Boosting bekerja dengan menggabungkan beberapa model lemah (weak learners), biasanya pohon keputusan kecil, untuk membentuk model yang lebih kuat dan akurat. Prosesnya dilakukan secara iteratif, di mana setiap model baru dilatih untuk memperbaiki kesalahan dari model sebelumnya. Awalnya, semua data diberi bobot yang sama, tetapi setelah setiap iterasi, data yang sulit diklasifikasikan dengan benar akan diberi bobot lebih tinggi agar model berikutnya lebih fokus pada data tersebut. Metode boosting yang populer antara lain AdaBoost, Gradient Boosting, dan XGBoost, yang masing-masing memiliki pendekatan berbeda dalam memperbarui bobot dan mengkombinasikan prediksi. Dengan strategi ini, Boosting dapat meningkatkan akurasi prediksi secara signifikan, tetapi juga lebih rentan terhadap overfitting jika tidak dikonfigurasi dengan baik.
+
 **Keunggulan:**
 1. **Akurasi Tinggi:** Boosting dapat meningkatkan akurasi model secara signifikan, terutama pada masalah klasifikasi dengan data yang tidak seimbang atau kompleks.
 2. **Mengurangi Bias:** Dengan menambahkan pohon atau model yang lebih lemah secara bertahap, boosting efektif dalam mengurangi bias model.
@@ -207,7 +212,7 @@ Rumus ini membagi jumlah data yang diklasifikasikan dengan benar sebagai positif
 Berikut grafik recallnya
 
 
-![grafik](https://github.com/user-attachments/assets/faf4535d-33cb-4880-8be4-436541bb9ca6)
+![grafik](https://i.postimg.cc/wM05D6V8/grafik.png)
 
 Dari hasil dapat dilihat bahwa model KNN memiliki Recall terbaik sehingga paling cocok untuk deteksi pencurian listrik
 ## Referensi
