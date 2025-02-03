@@ -1,12 +1,17 @@
 # Laporan Proyek Machine Learning - Emil Reginald Bowo
 
 ## Domain Proyek
+
 Domain yang dipilih untuk proyek machine learning ini adalah Energi, dengan judul Predictive Analytics: Pencurian Listrik
+
 ### Latar Belakang
+
 ![330px-500kV_3-Phase_Transmission_Lines](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/500kV_3-Phase_Transmission_Lines.png/330px-500kV_3-Phase_Transmission_Lines.png)
 
 Pencurian listrik di Indonesia merupakan masalah yang cukup serius yang dapat berdampak pada sektor ekonomi, lingkungan, dan keselamatan. Pencurian ini sering terjadi di sektor rumah tangga, industri, hingga sektor komersial.Diperkirakan bahwa pencurian listrik menyebabkan kerugian sekitar 96 miliar dollar setiap tahun di industri listrik, dengan negara-negara berkembang menanggung sebagian besar beban ini, yang mencapai sekitar 60 miliar dollar per tahun.[[1]](https://doi.org/10.1109/tpwrs.2022.3162391) Konsumsi listrik ilegal sering kali menyebabkan ketidakseimbangan antara pasokan dan permintaan, yang menyulitkan perusahaan utilitas untuk mengelola sumber daya mereka dengan efektif.[[2]](https://doi.org/10.2478/amns-2024-0850)Penerapan predictive analysis atau analisis prediktif dalam industri distribusi listrik dapat menjadi solusi yang efektif untuk menghentikan pencurian listrik. Dengan menggunakan teknik analisis data yang canggih, industri distribusi listrik dapat memprediksi dan mendeteksi pola konsumsi listrik yang mencurigakan sebelum menjadi masalah besar. Dengan mengurangi insiden pencurian, perusahaan distribusi listrik dapat menstabilkan harga listrik bagi konsumen yang sah, sehingga memastikan bahwa biaya tidak dibebankan secara tidak proporsional kepada pengguna yang jujur.[[3]](https://doi.org/10.1155/2019/4136874)
+
 ## Business Understanding
+
 Pengembangan model prediksi pencurian listrik memiliki potensi untuk memberikan manfaat bagi berbagai pihak, termasuk perusahaan utilitas dan konsumen. Model ini dapat membantu mengidentifikasi potensi pencurian listrik, mengurangi kerugian yang ditimbulkan, dan meningkatkan efisiensi distribusi energi. Contoh potensi manfaat dari hasil prediksi pencurian listrik yang akurat dapat membantu perusahaan utilitas dalam melakukan pemantauan dan intervensi lebih awal, serta mengoptimalkan pengelolaan sumber daya energi. 
 
 ### Problem Statements
@@ -85,14 +90,14 @@ Berikut ini contoh data pada dataset
 ## Exploratory Data Analysis - Univariate Analysis
 
 
-![download](https://i.postimg.cc/bNt40WnD/download.png)
+![download](https://github.com/user-attachments/assets/46dc9844-0448-4836-800c-4f633a7b91a0)
 
 Dapat dilihat pada gambar, terdapat 20152 untuk data 0 atau tidak terdeteksi pencurian dan 1889
 untuk terdeteksi pencurian. Hal ini menunjukkan adanya ketidakseimbangan data yang cukup besar.
 ## Exploratory Data Analysis - Multivariate Analysis
 
 
-![koefisien](https://i.postimg.cc/qv7bbFhx/koefisien.png)
+![koefisien](https://github.com/user-attachments/assets/300daa0f-627c-4df0-9f16-f8eef724579f)
 
 Dapat dilihat dari matriks korelasi, FLAG atau deteksi adanya pencurian atau tidak memiliki korelasi dengan data lainnya. Beberapa tanggal memiliki korelasi positif yang cukup besar dengan tanggal lainnya, contohnya tanggal 1/20 dengan 1/22.
 
@@ -124,9 +129,8 @@ Dalam proyek ini, digunakan Train Test Split dari library sklearn.model_selectio
 
 ## Modeling
 ##### **KNN (K-Nearest Neighbors)**
-**Cara Kerja:*  
-
-Algoritma K-Nearest Neighbors (KNN) bekerja dengan menentukan kelas atau nilai suatu data berdasarkan kedekatan dengan data lain yang telah diketahui kelas atau nilainya. Prosesnya dimulai dengan menentukan jumlah tetangga terdekat (K), lalu menghitung jarak antara data baru dengan setiap data dalam dataset menggunakan metode seperti Euclidean atau Manhattan. Setelah itu, algoritma memilih K data terdekat dan menentukan kelas atau nilai berdasarkan mayoritas (untuk klasifikasi) atau rata-rata (untuk regresi).  
+**Cara Kerja:**
+Algoritma K-Nearest Neighbors (KNN) bekerja dengan menentukan kelas atau nilai suatu data berdasarkan kedekatan dengan data lain yang telah diketahui kelas atau nilainya. Prosesnya dimulai dengan menentukan jumlah tetangga terdekat (K), lalu menghitung jarak antara data baru dengan setiap data dalam dataset menggunakan metode seperti Euclidean atau Manhattan. Setelah itu, algoritma memilih K data terdekat dan menentukan kelas atau nilai berdasarkan mayoritas (untuk klasifikasi) atau rata-rata (untuk regresi).
 
 **Keunggulan:**
 1. **Sederhana dan Mudah Dipahami:** KNN mudah dipahami dan diimplementasikan karena hanya membutuhkan jarak antara titik data untuk membuat prediksi.
@@ -146,15 +150,13 @@ Algoritma K-Nearest Neighbors (KNN) bekerja dengan menentukan kelas atau nilai s
 
 ##### **Random Forest**
 **Cara Kerja**
-
-Algoritma Random Forest bekerja dengan membangun sekumpulan pohon keputusan (decision trees) untuk melakukan klasifikasi atau regresi. Prosesnya dimulai dengan membentuk beberapa subset data melalui teknik bootstrap sampling, di mana setiap pohon keputusan dilatih dengan subset data yang berbeda. Saat membangun setiap pohon, hanya sebagian fitur yang dipilih secara acak untuk digunakan dalam pemilihan split terbaik, yang membantu mengurangi korelasi antar pohon. Setelah semua pohon terbentuk, hasil prediksi ditentukan dengan cara voting mayoritas untuk klasifikasi atau rata-rata prediksi untuk regresi. Dengan pendekatan ini, Random Forest mengurangi overfitting yang sering terjadi pada pohon keputusan tunggal dan meningkatkan akurasi serta kestabilan model, terutama dalam menangani dataset besar dan kompleks.  
-
-**Keunggulan:**  
+Algoritma Random Forest bekerja dengan membangun sekumpulan pohon keputusan (decision trees) untuk melakukan klasifikasi atau regresi. Prosesnya dimulai dengan membentuk beberapa subset data melalui teknik bootstrap sampling, di mana setiap pohon keputusan dilatih dengan subset data yang berbeda. Saat membangun setiap pohon, hanya sebagian fitur yang dipilih secara acak untuk digunakan dalam pemilihan split terbaik, yang membantu mengurangi korelasi antar pohon. Setelah semua pohon terbentuk, hasil prediksi ditentukan dengan cara voting mayoritas untuk klasifikasi atau rata-rata prediksi untuk regresi. Dengan pendekatan ini, Random Forest mengurangi overfitting yang sering terjadi pada pohon keputusan tunggal dan meningkatkan akurasi serta kestabilan model, terutama dalam menangani dataset besar dan kompleks.
+**Keunggulan:**
 1. **Akurasi Tinggi:** Random Forest dapat menghasilkan model yang sangat akurat dengan menggabungkan banyak pohon keputusan.
 2. **Mengurangi Overfitting:** Dengan membuat banyak pohon keputusan pada subset data dan fitur yang berbeda, Random Forest membantu mengurangi overfitting dibandingkan dengan pohon keputusan tunggal.
 3. **Feature Importance:** Random Forest dapat memberikan informasi penting tentang fitur yang paling berpengaruh dalam model.
 
-**Kelemahan:**  
+**Kelemahan:**
 1. **Kompleksitas Model:** Random Forest menghasilkan model yang lebih kompleks dan sulit diinterpretasikan dibandingkan dengan model yang lebih sederhana.
 2. **Lambat untuk Prediksi:** Karena melibatkan banyak pohon keputusan, proses prediksi bisa lebih lambat, terutama pada data yang sangat besar.
 3. **Kebutuhan Memori:** Random Forest memerlukan lebih banyak memori untuk menyimpan banyak pohon keputusan.
@@ -169,9 +171,7 @@ Algoritma Random Forest bekerja dengan membangun sekumpulan pohon keputusan (dec
 
 ##### **Boosting Algorithm (Misalnya, AdaBoost, Gradient Boosting)**
 **Cara Kerja**
-
 Algoritma Boosting bekerja dengan menggabungkan beberapa model lemah (weak learners), biasanya pohon keputusan kecil, untuk membentuk model yang lebih kuat dan akurat. Prosesnya dilakukan secara iteratif, di mana setiap model baru dilatih untuk memperbaiki kesalahan dari model sebelumnya. Awalnya, semua data diberi bobot yang sama, tetapi setelah setiap iterasi, data yang sulit diklasifikasikan dengan benar akan diberi bobot lebih tinggi agar model berikutnya lebih fokus pada data tersebut. Metode boosting yang populer antara lain AdaBoost, Gradient Boosting, dan XGBoost, yang masing-masing memiliki pendekatan berbeda dalam memperbarui bobot dan mengkombinasikan prediksi. Dengan strategi ini, Boosting dapat meningkatkan akurasi prediksi secara signifikan, tetapi juga lebih rentan terhadap overfitting jika tidak dikonfigurasi dengan baik.
-
 **Keunggulan:**
 1. **Akurasi Tinggi:** Boosting dapat meningkatkan akurasi model secara signifikan, terutama pada masalah klasifikasi dengan data yang tidak seimbang atau kompleks.
 2. **Mengurangi Bias:** Dengan menambahkan pohon atau model yang lebih lemah secara bertahap, boosting efektif dalam mengurangi bias model.
@@ -212,7 +212,7 @@ Rumus ini membagi jumlah data yang diklasifikasikan dengan benar sebagai positif
 Berikut grafik recallnya
 
 
-![grafik](https://i.postimg.cc/wM05D6V8/grafik.png)
+![grafik](https://github.com/user-attachments/assets/a0cd933c-7c78-4407-b130-7f7f0fdeb372)
 
 Dari hasil dapat dilihat bahwa model KNN memiliki Recall terbaik sehingga paling cocok untuk deteksi pencurian listrik
 ## Referensi
